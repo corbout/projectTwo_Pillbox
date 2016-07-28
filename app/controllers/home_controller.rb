@@ -5,4 +5,6 @@ class HomeController < ApplicationController
     @pillboxes = Pillbox.where(user_id: current_user.id)
     @physicians = Physician.where(user_id: current_user.id)
   end
+
+
 end

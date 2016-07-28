@@ -67,17 +67,44 @@ span {
 }
 
 .profile_navbar {
-  position: static;
-  z-index: 2;
   float: left;
-  display: inline-block;
+  overflow: auto;
   max-width: 255px;
   min-width: 255px;
+  max-height: 255px;
+  min-height: 200px;
   border: solid black 2px;
   padding-left: 50px;
   padding-top: 20px;
   padding-right: 100px;
   padding-bottom: 100%;
+}
+
+.title_pillbox {
+  padding-left: 15px;
+  overflow: auto;
+}
+.row_pillbox {
+  overflow: auto;
+}
+
+.big_pillbox {
+  margin-left: 260px;
+  border: solid black 2px;
+}
+
+.title_physician {
+  padding-left: 15px;
+  overflow: auto;
+}
+.row_physician {
+
+  overflow: auto;
+}
+
+.big_physician {
+  margin-left: 260px;
+  border: solid black 2px;
 }
 
 .physician_navbar {
@@ -103,27 +130,18 @@ span {
   padding-right: 100px;
   padding-bottom: 100%;
 }
-/*
-.pillbox_title {
-  float: left;
-  margin-left: 40px;
-}*/
-.row {
 
-
-}
-.pillbox {
-
+.border {
+  border: solid black 1px;
+  display: inline-block;
 }
 
-.row_physician {
-  float: left;
+
+
+.test {
+  border: solid black 1px;
 }
 
-.physician {
-  float: left;
-  display: block;
-  margin-left: 50px;
-  margin-right: 50px;
-  white-space: nowrap;
+.one {
+  border: solid red 1px;
 }

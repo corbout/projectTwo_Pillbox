@@ -1,7 +1,7 @@
 class PillboxesController < ApplicationController
   before_action :authenticate_user! # Must be logged in to access the pillbox page
   def index
-    @pillboxes = Pillbox.all
+    @pillboxes = Pillbox.where(user_id: current_user.id)
     @users = User.where(id: current_user.id)
   end
 
@@ -26,7 +26,6 @@ class PillboxesController < ApplicationController
 
   def edit
     @pillbox = Pillbox.find(params[:id])
-    @users = User.where(id: current_user.id)
   end
 
   def update

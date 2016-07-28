@@ -30,8 +30,15 @@
   </div>
   <div class="field">
     <%= f.label :route, "Route: " %>
-    <%= f.text_field :route %>
+    <span class="option">Oral <span><%= f.radio_button :route, "Oral" %>
+    <span class="option">Intravenous <span><%= f.radio_button :route, "IV" %>
+    <span class="option">Rectal <span><%= f.radio_button :route, "Rectal" %>
+    <span class="option">Sublingual <span><%= f.radio_button :route, "Sublingual" %>
+    <span class="option">Inhalation <span><%= f.radio_button :route, "Inhalation" %>
+    <span class="option">Intramuscular (IM) <span><%= f.radio_button :route, "Intramuscular" %>
+    <span class="option">Subcutaneous (SQ) <span><%= f.radio_button :route, "Subcutaneous" %>
   </div>
+
   <div class="field">
     <%= f.label :indication, "Indication: " %>
     <%= f.text_field :indication %>

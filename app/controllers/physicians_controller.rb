@@ -1,7 +1,7 @@
 class PhysiciansController < ApplicationController
     before_action :authenticate_user! # Must be logged in to access the physician page
   def index
-    @physicians = Physician.all
+    @physicians = Physician.where(user_id: current_user.id)
     @users = User.where(id: current_user.id)
   end
 
@@ -26,7 +26,6 @@ class PhysiciansController < ApplicationController
 
   def edit
     @physician = Physician.find(params[:id])
-    @users = User.where(id: current_user.id)
   end
 
   def update

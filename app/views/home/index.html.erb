@@ -1,4 +1,5 @@
 <!-- Index/Profile Page -->
+<div class="clearfix">
 <nav class="profile_navbar">
   <h1>profile</h1>
 <% @users.each do |user| %>
@@ -15,45 +16,63 @@
 <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %><br>
 </nav>
 
-<br>
-<h1>pill.boxes</h1>
-<div class="row_pillbox">
-  <% @pillboxes.each do |f| %>
-  <div class="col-md-2">
-    <div class="pillbox">
-          <strong>Medication: </strong><%= f.medication_name %><br>
-          <strong>Dosage: </strong><%= f.dosage %>mg<br>
-          <strong>Frequency: </strong><%= f.frequency %>x daily<br>
-          <strong>Route: </strong><%= f.route %><br>
-          <strong>Indication: </strong><%= f.indication %><br>
-          <strong>Prescribing Physician: </strong><%= f.prescribing_physician %><br>
-          <%= link_to "Show Pillbox", pillbox_path(f.id) %>
+<div class="big_pillbox">
+  <div class="title_pillbox">
+    <h1>pillboxes</h1>
+  </div>
+  <section class="row_pillbox">
+    <% @pillboxes.each do |f| %>
+    <div class="col-md-3">
+      <div class="pillbox">
+            <strong>Medication: </strong><%= f.medication_name %><br>
+            <strong>Dosage: </strong><%= f.dosage %>mg<br>
+            <strong>Frequency: </strong><%= f.frequency %>x daily<br>
+            <strong>Route: </strong><%= f.route %><br>
+            <strong>Indication: </strong><%= f.indication %><br>
+            <strong>Prescribing Physician: </strong><%= f.prescribing_physician %><br>
+            <%= link_to "Show Pillbox", pillbox_path(f.id) %><br>
+            <%= link_to "Delete Pillbox", destroy_pillbox_path(f.id), :method => :delete %>
+        </div>
+        <br>
       </div>
-      <br>
-    </div>
-<% end %>
+  <% end %>
+  </section>
 </div>
-
-
-<div class="row_physician">
-<div class="physician">
-  <h1>physicians</h1>
-<% @physicians.each do |f| %>
-      <strong>Title: </strong><%= f.title %><br>
-      <strong>First Name: </strong><%= f.f_name %><br>
-      <strong>Last Name: </strong><%= f.l_name %><br>
-      <strong>Specialty: </strong><%= f.specialty %><br>
-      <strong>Address Line One: </strong><%= f.address_line_one %><br>
-      <strong>Address Line Two: </strong><%= f.address_line_two %><br>
-      <strong>City: </strong><%= f.city %><br>
-      <strong>State: </strong><%= f.state %><br>
-      <strong>Zip: </strong><%= f.zip %><br>
-      <strong>Country: </strong><%= f.country %><br>
-      <strong>Phone Number: </strong><%= f.phone_number %><br>
-      <strong>Email: </strong><%= f.email %><br>
-      <%= link_to "Show Physician", physician_path(f.id) %>
-      <br>
-      <br>
-<% end %>
+<br>
+<div class="big_physician">
+  <div class="title_physician">
+    <h1>physicians</h1>
+  </div>
+  <div class="row_physician">
+    <% @physicians.each do |f| %>
+    <div class="col-md-3">
+      <div class="physician">
+          <strong>Title: </strong><%= f.title %><br>
+          <strong>First Name: </strong><%= f.f_name %><br>
+          <strong>Last Name: </strong><%= f.l_name %><br>
+          <strong>Specialty: </strong><%= f.specialty %><br>
+          <strong>Address Line One: </strong><%= f.address_line_one %><br>
+          <strong>Address Line Two: </strong><%= f.address_line_two %><br>
+          <strong>City: </strong><%= f.city %><br>
+          <strong>State: </strong><%= f.state %><br>
+          <strong>Zip: </strong><%= f.zip %><br>
+          <strong>Country: </strong><%= f.country %><br>
+          <strong>Phone Number: </strong><%= f.phone_number %><br>
+          <strong>Email: </strong><%= f.email %><br>
+          <%= link_to "Show Physician", physician_path(f.id) %><br>
+          <%= link_to "Delete Physician", destroy_physician_path(f.id), :method => :delete %>
+          </div>
+          <br>
+        </div>
+    <% end %>
+  </section>
+  </div>
 </div>
-</div>
+<!-- <div class="test">
+  <div class="one">
+  qweqw
+  </div>
+  <div class="two">
+    qweqw
+  </div>
+</div> -->
