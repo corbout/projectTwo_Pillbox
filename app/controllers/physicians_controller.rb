@@ -26,6 +26,7 @@ class PhysiciansController < ApplicationController
 
   def edit
     @physician = Physician.find(params[:id])
+    @users = User.where(id: current_user.id)
   end
 
   def update

@@ -26,6 +26,7 @@ class PillboxesController < ApplicationController
 
   def edit
     @pillbox = Pillbox.find(params[:id])
+    @users = User.where(id: current_user.id)
   end
 
   def update

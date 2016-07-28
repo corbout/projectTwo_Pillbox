@@ -1,11 +1,13 @@
 <!-- Edit Physician -->
+<div class="clearfix">
 <nav class="physician_navbar">
-  <h1>physician</h1>
-  <% @users.each do |user| %>
-      <%= user.f_name %>
-      <%= user.l_name %>
-  <% end %>
-
+  <div class="title_physician">
+    <h1>edit physician</h1>
+    <% @users.each do |user| %>
+        <%= user.f_name %>
+        <%= user.l_name %>
+    <% end %>
+  </div>
 <br>
 <%= link_to "Profile", home_index_path %><br>
 <%= link_to "Create Pillbox", new_pillbox_path %><br>
@@ -78,3 +80,4 @@
     <%= f.submit "Update Physician" %>
   </div>
 <% end %>
+  </div>

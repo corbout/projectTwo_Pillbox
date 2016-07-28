@@ -1,11 +1,13 @@
 <!-- Show All Physicians -->
+<div class="clearfix">
 <nav class="physician_navbar">
-  <h1>physicians</h1>
-  <% @users.each do |user| %>
-      <%= user.f_name %>
-      <%= user.l_name %>
-  <% end %>
-
+  <div class="title_physician">
+    <h1>physicians</h1>
+    <% @users.each do |user| %>
+        <%= user.f_name %>
+        <%= user.l_name %>
+    <% end %>
+  </div>
 <br>
 <%= link_to "Profile", home_index_path %><br>
 <%= link_to "Create Pillbox", new_pillbox_path %><br>
@@ -33,3 +35,4 @@
     <%= link_to "Edit Physician", edit_physician_path(f.id) %><br>
     <%= link_to "Delete Physician", destroy_physician_path(f.id), :method => :delete %>
 <% end %>
+  </div>

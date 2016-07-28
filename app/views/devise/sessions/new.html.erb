@@ -1,26 +1,27 @@
 <!-- Log in Page, Website begins here because of before_action :authenticate_user! in home_controller.rb -->
 <!-- *Notes for later* -->
-<div class="title">
-  <h1>pill.box</h1>
-</div>
+
 
 <nav class="navbar navbar-collpase navbar-fixed-top">
-  <div class="nav_header">
-    <div class="login_password">
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="field">
-              <%= f.label :email %>
-              <%= f.email_field :email, autofocus: true %>
-              <%= f.label :password %>
-              <%= f.password_field :password, autocomplete: "off" %>
-          <%= f.submit "Login" %>
+    <div class="nav_header">
+      <div class="login_password">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field">
+                <%= f.label :email %>
+                <%= f.email_field :email, autofocus: true %>
+                <%= f.label :password %>
+                <%= f.password_field :password, autocomplete: "off" %>
+            <%= f.submit "Login" %>
+          </div>
+        <% end %>
+        <div class="forgot_password">
+          <%= render "devise/shared/links" %>
         </div>
-      <% end %>
-      <div class="forgot_password">
-        <%= render "devise/shared/links" %>
       </div>
     </div>
-  </div>
+    <div class="title">
+        <p>pill.box</p>
+    </div>
 </nav>
 
 <div class="container">
