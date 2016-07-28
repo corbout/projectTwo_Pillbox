@@ -1,0 +1,24 @@
+<nav class="pillbox_navbar">
+  <h1>pill.box</h1>
+  <% @users.each do |user| %>
+      <%= user.f_name %>
+      <%= user.l_name %>
+  <% end %>
+<br>
+<%= link_to "Profile", home_index_path %><br>
+<%= link_to "Create Pillbox", new_pillbox_path %><br>
+<%= link_to "Show Pillboxes", index_pillbox_path %><br>
+<%= link_to "Create Physician", new_physician_path %><br>
+<%= link_to "Show Physicians", index_physician_path %><br>
+<%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %><br>
+</nav>
+
+<strong>Medication: </strong><%= @pillbox.medication_name %><br>
+<strong>Dosage: </strong><%= @pillbox.dosage %><br>
+<strong>Frequency: </strong><%= @pillbox.frequency %><br>
+<strong>Route: </strong><%= @pillbox.route %><br>
+<strong>Indication: </strong><%= @pillbox.indication %><br>
+<strong>Prescribing Physician: </strong><%= @pillbox.prescribing_physician %><br>
+
+<%= link_to "Edit Pillbox", edit_pillbox_path(@pillbox.id) %><br>
+<%= link_to "Delete Pillbox", destroy_pillbox_path, :method => :delete %>

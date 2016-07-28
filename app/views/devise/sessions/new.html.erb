@@ -1,0 +1,99 @@
+<!-- Log in Page, Website begins here because of before_action :authenticate_user! in home_controller.rb -->
+<!-- *Notes for later* -->
+<div class="title">
+  <h1>pill.box</h1>
+</div>
+
+<nav class="navbar navbar-collpase navbar-fixed-top">
+  <div class="nav_header">
+    <div class="login_password">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field">
+              <%= f.label :email %>
+              <%= f.email_field :email, autofocus: true %>
+              <%= f.label :password %>
+              <%= f.password_field :password, autocomplete: "off" %>
+          <%= f.submit "Login" %>
+        </div>
+      <% end %>
+      <div class="forgot_password">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="sign_up">
+    <h2>Not a Member? Sign up!</h2>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+    <div class="row">
+      <div class="field">
+        <%= f.label :f_name, "First Name: " %>
+        <%= f.text_field :f_name %>
+      </div>
+
+      <div class="field">
+        <%= f.label :l_name, "Last Name: " %>
+        <%= f.text_field :l_name %>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+      <div class="field">
+        <%= f.label :password, "Password: " %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %>
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+      <div class="field">
+        <%= f.label :password_confirmation, "Password Confirmation: " %>
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+      <div class="field">
+        <%= f.label :email, "Email: " %>
+        <%= f.email_field :email %>
+      </div>
+      <div class="field">
+        <%= f.label :phone_number, "Phone Number: " %>
+        <%= f.telephone_field :phone_number %>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+      <div class="field">
+        <%= f.label :date_of_birth, "Birthdate:" %>
+        <%= f.date_field :date_of_birth %>
+      </div>
+      <div class="field">
+       <%= f.label :gender, "Gender: " %>
+       <span class="option">Male <span><%= f.radio_button :gender, "M" %>
+       <span class="option">Female <span><%= f.radio_button :gender, "F" %><br>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="row">
+      <div class="actions">
+        <%= f.submit "Sign up" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

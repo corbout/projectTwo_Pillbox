@@ -1,0 +1,33 @@
+<!-- Show Physician/:id -->
+<nav class="physician_navbar">
+  <h1>your.physician</h1>
+  <% @users.each do |user| %>
+      <%= user.f_name %>
+      <%= user.l_name %>
+  <% end %>
+
+<br>
+<%= link_to "Profile", home_index_path %><br>
+<%= link_to "Create Pillbox", new_pillbox_path %><br>
+<%= link_to "Show Pillboxes", index_pillbox_path %><br>
+<%= link_to "Create Physician", new_physician_path %><br>
+<%= link_to "Show Physicians", index_physician_path %><br>
+<%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %><br>
+</nav>
+
+  <br>
+<strong>Title: </strong><%= @physician.title %><br>
+<strong>First Name: </strong><%= @physician.f_name %><br>
+<strong>Last Name: </strong><%= @physician.l_name %><br>
+<strong>Specialty: </strong><%= @physician.specialty %><br>
+<strong>Address Line One: </strong><%= @physician.address_line_one %><br>
+<strong>Address Line Two: </strong><%= @physician.address_line_two %><br>
+<strong>City: </strong><%= @physician.city %><br>
+<strong>State: </strong><%= @physician.state %><br>
+<strong>Zip: </strong><%= @physician.zip %><br>
+<strong>Country: </strong><%= @physician.country %><br>
+<strong>Phone Number: </strong><%= @physician.phone_number %><br>
+<strong>Email: </strong><%= @physician.email %><br>
+
+  <%= link_to "Edit Physician", edit_physician_path(@physician.id) %><br>
+  <%= link_to "Delete Physician", destroy_physician_path, :method => :delete %>

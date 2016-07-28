@@ -1,0 +1,49 @@
+<nav class="pillbox_navbar">
+  <h1>pill.box</h1>
+  <% @users.each do |user| %>
+      <%= user.f_name %>
+      <%= user.l_name %>
+  <% end %>
+
+<br>
+<%= link_to "Profile", home_index_path %><br>
+<%= link_to "Create Pillbox", new_pillbox_path %><br>
+<%= link_to "Show Pillboxes", index_pillbox_path %><br>
+<%= link_to "Create Physician", new_physician_path %><br>
+<%= link_to "Show Physicians", index_physician_path %><br>
+<%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %><br>
+</nav>
+
+  <br>
+<%= form_for(@pillbox, url: create_pillbox_path) do |f| %>
+  <div class="field">
+    <%= f.label :medication_name, "Medication: " %>
+    <%= f.text_field :medication_name %>
+  </div>
+  <div class="field">
+    <%= f.label :dosage, "Dosage: " %>
+    <%= f.text_field :dosage %>
+  </div>
+  <div class="field">
+    <%= f.label :frequency, "Frequency: " %>
+    <%= f.text_field :frequency %>
+  </div>
+  <div class="field">
+    <%= f.label :route, "Route: " %>
+    <%= f.text_field :route %>
+  </div>
+  <div class="field">
+    <%= f.label :indication, "Indication: " %>
+    <%= f.text_field :indication %>
+  </div>
+  <div class="field">
+    <%= f.label :prescribing_physician, "Prescribing Physician: " %>
+    <%= f.text_field :prescribing_physician %>
+  </div>
+
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+
+  <div class="actions">
+    <%= f.submit "Create Pillbox" %>
+  </div>
+<% end %>
