@@ -2,7 +2,7 @@
 <div class="clearfix">
 <nav class="physician_navbar">
   <div class="title_physician>">
-    <h1>new physician</h1>
+    <h1 style="font-size: 40px;">new physician</h1>
     <% @users.each do |user| %>
         <%= user.f_name %>
         <%= user.l_name %>
@@ -18,6 +18,9 @@
 </nav>
 
   <br>
+<div class="big_physician">
+  <div class="row_physician">
+    <div class="col-md-3">
 <%= form_for(@physician, url: create_physician_path) do |f| %>
   <div class="field">
    <%= f.label :title, "Title: " %>
@@ -81,5 +84,7 @@
   <div class="actions">
     <%= f.submit "Your Physician" %>
   </div>
+</div>
 <% end %>
   </div>
+</div>

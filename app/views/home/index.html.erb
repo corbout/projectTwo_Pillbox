@@ -2,7 +2,9 @@
 <div class="clearfix">
 <nav class="profile_navbar">
   <div class="title_profile">
-    <h1>User</h1>
+    <div class="font_style">
+      <h1 style="font-size: 40px;">user<i class="fa fa-user-md" aria-hidden="true"></i></h1>
+    </div>
     <% @users.each do |user| %>
         <%= user.f_name %>
         <%= user.l_name %>
@@ -17,10 +19,10 @@
 </nav>
 
 <div class="big_pillbox">
-  <div class="title_pillbox">
-    <h1>pillboxes</h1>
+  <div class="profile_pillbox">
+    <h1>pillboxes <i class="fa fa-medkit" aria-hidden="true"></i></h1>
   </div>
-  <section class="row_pillbox">
+  <div class="row_pillbox">
     <% @pillboxes.each do |f| %>
     <div class="col-md-3">
       <div class="pillbox">
@@ -36,12 +38,12 @@
         <br>
       </div>
   <% end %>
-  </section>
 </div>
-<br>
+</div>
+
 <div class="big_physician">
-  <div class="title_physician">
-    <h1>physicians</h1>
+  <div class="profile_physician">
+    <h1>physicians <i class="fa fa-stethoscope" aria-hidden="true"></i></h1>
   </div>
   <div class="row_physician">
     <% @physicians.each do |f| %>
@@ -68,11 +70,3 @@
   </section>
   </div>
 </div>
-<!-- <div class="test">
-  <div class="one">
-  qweqw
-  </div>
-  <div class="two">
-    qweqw
-  </div>
-</div> -->

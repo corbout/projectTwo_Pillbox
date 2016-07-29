@@ -7,9 +7,9 @@
       <div class="login_password">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="field">
-                <%= f.label :email %>
+                <i class="fa fa-user-md" aria-hidden="true"></i><%= f.label :email, "Email" %>
                 <%= f.email_field :email, autofocus: true %>
-                <%= f.label :password %>
+                <i class="fa fa-lock" aria-hidden="true"></i><%= f.label :password, " Password" %>
                 <%= f.password_field :password, autocomplete: "off" %>
             <%= f.submit "Login" %>
           </div>
@@ -20,13 +20,13 @@
       </div>
     </div>
     <div class="title">
-        <p>pill.box</p>
+        <p class="title_size">pill.box <i class="fa fa-plus-square" aria-hidden="true"></i></p>
     </div>
 </nav>
 
-<div class="container">
+<div class="big_sign_up">
   <div class="sign_up">
-    <h2>Not a Member? Sign up!</h2>
+    <h2 class=font_style>Not a Member? Sign up!</h2>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
 

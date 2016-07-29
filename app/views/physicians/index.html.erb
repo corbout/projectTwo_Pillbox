@@ -2,7 +2,7 @@
 <div class="clearfix">
 <nav class="physician_navbar">
   <div class="title_physician">
-    <h1>physicians</h1>
+    <h1 style="font-size: 40px;">show physicians</h1>
     <% @users.each do |user| %>
         <%= user.f_name %>
         <%= user.l_name %>
@@ -17,7 +17,10 @@
 <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %><br>
 </nav>
 
+<div class="big_physician">
+  <div class="row_physician">
 <% @physicians.each do |f| %>
+<div class="col-md-3">
   <br>
   <strong>Title: </strong><%= f.title %><br>
   <strong>First Name: </strong><%= f.f_name %><br>
@@ -34,5 +37,7 @@
 
     <%= link_to "Edit Physician", edit_physician_path(f.id) %><br>
     <%= link_to "Delete Physician", destroy_physician_path(f.id), :method => :delete %>
+  </div>
 <% end %>
   </div>
+</div>

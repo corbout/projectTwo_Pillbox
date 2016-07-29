@@ -1,12 +1,14 @@
 p {
   text-align: left;
-  margin-left: 50px;
   font-weight: bolder;
 }
+
+
 body {
   font-family: 'Oswald', sans-serif;
   font-size: 15px;
   font-weight: bolder;
+  background-color: #E8F6F7;
 }
 
 span {
@@ -14,24 +16,30 @@ span {
   margin-right: 10px;
 }
 
+.font_style {
+  font-weight: bolder;
+}
+
 .title {
   position: fixed;
-
   margin-left: 75px;
   margin-top: 50px;
   font-weight: bolder;
   font-size: 100px;
-  /*border: solid black 1px;*/
-/*text-decoration: underline;*/
+  padding: 10px;
+  border-radius: 10px;
+  /*background-color: white;*/
+  text-shadow: 4px 4px 7px rgba(150, 150, 150, 1);
 }
 
+
 .nav_header {
-  background-color: beige;
+  background-color: white;
   display: inline-flex;
   postion: static;
   width: 100%;
   height: 100px;
-  /*border: solid black 1px;*/
+  box-shadow: 0px 10px 14px -6px rgba(0,0,0,0.75);
 }
 
 .login_password {
@@ -40,9 +48,6 @@ span {
   margin-left: 20px;
   margin-top: 35px;
   margin-bottom: 10px;
-}
-
-.container {
 }
 
 .row {
@@ -56,11 +61,22 @@ span {
   margin-right: 5px;
 }
 
-.sign_up {
+.big_sign_up {
   float: right;
-  position: relative;
-  margin-top: 100px;
+  position: static;
+  margin-left: 100px;
+  margin-top: 50px;
+}
+
+.sign_up {
+  border-radius: 10px;
+  padding: 30px 30px 30px 30px;
+  background-color: white;
+  float: right;
+  position: static;
+  margin-top: 200px;
   margin-right: 200px;
+  box-shadow: 10px 10px 14px -6px rgba(0,0,0,0.75);
 }
 
 .forgot_password {
@@ -73,18 +89,12 @@ span {
   border: solid black 2px;
 }
 
-.nav_right {
-  display: inline-flex;
-  postion: static;
-  float: right;
-  background-color: beige;
-  /*padding-left: 100%;*/
-}
-
 .profile_navbar {
-  background-color: beige;
+  font-size: 15px;
+  background-color: white;
+  box-shadow: 10px 0px 14px -6px rgba(0,0,0,0.75);
   float: left;
-  overflow: auto;
+  position: fixed;
   max-width: 255px;
   min-width: 255px;
   max-height: 255px;
@@ -92,7 +102,7 @@ span {
   padding-left: 50px;
   padding-top: 20px;
   padding-right: 100px;
-  padding-bottom: 100%;
+  padding-bottom: 70%;
 }
 .title_profile {
   position: static;
@@ -100,19 +110,33 @@ span {
 
 .title_pillbox {
   position: static;
+  margin-bottom: 30px;
 }
+
+.profile_pillbox {
+  margin-left: 10px;
+}
+
 .row_pillbox {
   overflow: auto;
 }
 
 .big_pillbox {
-  margin-left: 260px;
+  margin-left: 280px;
+  margin-right:20px;
+  margin-bottom: 20px;
   background-color: white;
+  border-radius: 10px;
   position: static;
 }
 
 .title_physician {
   position: static;
+  margin-bottom: 30px;
+}
+
+.profile_physician {
+  margin-left: 10px;
 }
 
 .row_physician {
@@ -120,15 +144,44 @@ span {
 }
 
 .big_physician {
-  margin-left: 260px;
+  margin-left: 280px;
+  margin-right: 20px;
   background-color: white;
+  border-radius: 10px;
   position: static;
 }
 
 .physician_navbar {
-  background-color: beige;
+  font-size: 15px;
+  background-color: white;
+  box-shadow: 10px 0px 14px -6px rgba(0,0,0,0.75);
   float: left;
   overflow: auto;
+  position: fixed;
+  max-width: 255px;
+  min-width: 255px;
+  max-height: 255px;
+  min-height: 200px;
+  padding-left: 50px;
+  padding-top: 20px;
+  padding-right: 100px;
+  padding-bottom: 50%;
+}
+
+.big_create_pillbox {
+  float: right;
+  position: static;
+  margin-left: 100px;
+  margin-top: 50px;
+}
+
+.pillbox_navbar {
+  font-size: 15px;
+  background-color: white;
+  box-shadow: 10px 0px 14px -6px rgba(0,0,0,0.75);
+  float: left;
+  overflow: auto;
+  position: fixed;
   max-width: 255px;
   min-width: 255px;
   max-height: 255px;
@@ -139,31 +192,14 @@ span {
   padding-bottom: 100%;
 }
 
-.pillbox_navbar {
-  background-color: beige;
-  float: left;
-  overflow: auto;
-  max-width: 255px;
-  min-width: 255px;
-  max-height: 255px;
-  min-height: 200px;
-  padding-left: 50px;
-  padding-top: 20px;
-  padding-right: 100px;
-  padding-bottom: 100%;
+.big_create_physician {
+  float: right;
+  position: static;
+  margin-left: 100px;
+  margin-top: 50px;
 }
 
 .border {
   border: solid black 1px;
   display: inline-block;
-}
-
-
-
-.test {
-  border: solid black 1px;
-}
-
-.one {
-  border: solid red 1px;
 }

@@ -2,7 +2,7 @@
 <div class="clearfix">
 <nav class="physician_navbar">
   <div class="title_physician">
-    <h1>edit physician</h1>
+    <h1 style="font-size: 40px;">edit physician</h1>
     <% @users.each do |user| %>
         <%= user.f_name %>
         <%= user.l_name %>
@@ -18,7 +18,10 @@
 </nav>
 
   <br>
+<div class="big_physician">
+  <div class="row_physician">
 <%= form_for(@physician, url: update_physician_path) do |f| %>
+<div class="col-md-3">
   <div class="field">
    <%= f.label :title, "Title: " %>
    <span class="option">DR <span><%= f.radio_button :title, "DR" %>
@@ -79,5 +82,7 @@
   <div class="actions">
     <%= f.submit "Update Physician" %>
   </div>
+</div>
 <% end %>
   </div>
+</div>
