@@ -19,19 +19,17 @@
 
 <div class="big_physician">
   <div class="row_physician">
+    <h1>physicians  <i class="fa fa-stethoscope" aria-hidden="true"></i></h1>
 <% @physicians.each do |f| %>
 <div class="col-md-3">
   <br>
-  <strong>Title: </strong><%= f.title %><br>
-  <strong>First Name: </strong><%= f.f_name %><br>
-  <strong>Last Name: </strong><%= f.l_name %><br>
+  <%= f.title %>,
+  <%= f.f_name %>
+  <%= f.l_name %><br>
   <strong>Specialty: </strong><%= f.specialty %><br>
-  <strong>Address Line One: </strong><%= f.address_line_one %><br>
-  <strong>Address Line Two: </strong><%= f.address_line_two %><br>
-  <strong>City: </strong><%= f.city %><br>
-  <strong>State: </strong><%= f.state %><br>
-  <strong>Zip: </strong><%= f.zip %><br>
-  <strong>Country: </strong><%= f.country %><br>
+  <strong>Address: </strong><%= f.address_line_one %><%= f.address_line_two %><br>
+  <%= f.city %>, <%= f.state %> <%= f.zip %><br>
+  <%= f.country %><br>
   <strong>Phone Number: </strong><%= f.phone_number %><br>
   <strong>Email: </strong><%= f.email %><br>
 

@@ -22,18 +22,15 @@
   <div class="row_physician">
     <div class="col-md-4">
       <h1>physicians  <i class="fa fa-stethoscope" aria-hidden="true"></i></h1>
-<strong>Title: </strong><%= @physician.title %><br>
-<strong>First Name: </strong><%= @physician.f_name %><br>
-<strong>Last Name: </strong><%= @physician.l_name %><br>
-<strong>Specialty: </strong><%= @physician.specialty %><br>
-<strong>Address Line One: </strong><%= @physician.address_line_one %><br>
-<strong>Address Line Two: </strong><%= @physician.address_line_two %><br>
-<strong>City: </strong><%= @physician.city %><br>
-<strong>State: </strong><%= @physician.state %><br>
-<strong>Zip: </strong><%= @physician.zip %><br>
-<strong>Country: </strong><%= @physician.country %><br>
-<strong>Phone Number: </strong><%= @physician.phone_number %><br>
-<strong>Email: </strong><%= @physician.email %><br>
+      <%= @physician.title %>,
+      <%= @physician.f_name %>
+      <%= @physician.l_name %><br>
+      <strong>Specialty: </strong><%= @physician.specialty %><br>
+      <strong>Address: </strong><%= @physician.address_line_one %><%= @physician.address_line_two %><br>
+      <%= @physician.city %>, <%= @physician.state %> <%= @physician.zip %><br>
+      <%= @physician.country %><br>
+      <strong>Phone Number: </strong><%= @physician.phone_number %><br>
+      <strong>Email: </strong><%= @physician.email %><br>
 
   <%= link_to "Edit Physician", edit_physician_path(@physician.id) %><br>
   <%= link_to "Delete Physician", destroy_physician_path, :method => :delete %>

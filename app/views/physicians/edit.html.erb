@@ -20,8 +20,9 @@
   <br>
 <div class="create_physician">
   <div class="row_physician">
-    <div class="col-md-12">
+    <h1>physicians  <i class="fa fa-stethoscope" aria-hidden="true"></i></h1>
 <%= form_for(@physician, url: update_physician_path) do |f| %>
+<div class="col-md-12">
 <div class="field">
  <%= f.label :title, "Title: " %>
  <span class="option">DR <span><%= f.radio_button :title, "DR" %>
