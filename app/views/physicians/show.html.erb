@@ -10,17 +10,18 @@
   </div>
 <br>
 <%= link_to "Profile", home_index_path %><br>
-<%= link_to "Create Pillbox", new_pillbox_path %><br>
-<%= link_to "Show Pillboxes", index_pillbox_path %><br>
-<%= link_to "Create Physician", new_physician_path %><br>
-<%= link_to "Show Physicians", index_physician_path %><br>
+<%= link_to "Create.Pill", new_pillbox_path %><br>
+<%= link_to "Show.Pillbox", index_pillbox_path %><br>
+<%= link_to "Create.Physician", new_physician_path %><br>
+<%= link_to "Show.Physicians", index_physician_path %><br>
 <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %><br>
 </nav>
 
   <br>
-<div class="big_physician">
+<div class="create_physician">
   <div class="row_physician">
-    <div class="col-md-3">
+    <div class="col-md-4">
+      <h1>physicians  <i class="fa fa-stethoscope" aria-hidden="true"></i></h1>
 <strong>Title: </strong><%= @physician.title %><br>
 <strong>First Name: </strong><%= @physician.f_name %><br>
 <strong>Last Name: </strong><%= @physician.l_name %><br>
@@ -36,6 +37,6 @@
 
   <%= link_to "Edit Physician", edit_physician_path(@physician.id) %><br>
   <%= link_to "Delete Physician", destroy_physician_path, :method => :delete %>
-</div>
+      </div>
     </div>
 </div>

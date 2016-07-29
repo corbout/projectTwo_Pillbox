@@ -11,24 +11,24 @@
     <% end %>
   </div>
 <br>
-<%= link_to "Create Pillbox", new_pillbox_path %><br>
-<%= link_to "Show Pillboxes", index_pillbox_path %><br>
-<%= link_to "Create Physician", new_physician_path %><br>
-<%= link_to "Show Physicians", index_physician_path %><br>
+<%= link_to "Create.pill", new_pillbox_path %><br>
+<%= link_to "Show.Pillbox", index_pillbox_path %><br>
+<%= link_to "Create.Physician", new_physician_path %><br>
+<%= link_to "Show.Physicians", index_physician_path %><br>
 <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %><br>
 </nav>
 
 <div class="big_pillbox">
   <div class="profile_pillbox">
-    <h1>pillboxes <i class="fa fa-medkit" aria-hidden="true"></i></h1>
+    <h1>pill.box <i class="fa fa-medkit" aria-hidden="true"></i></h1>
   </div>
   <div class="row_pillbox">
     <% @pillboxes.each do |f| %>
     <div class="col-md-3">
       <div class="pillbox">
             <strong>Medication: </strong><%= f.medication_name %><br>
-            <strong>Dosage: </strong><%= f.dosage %>mg<br>
-            <strong>Frequency: </strong><%= f.frequency %>x daily<br>
+            <strong>Dosage: </strong><%= f.dosage %><br>
+            <strong>Frequency: </strong><%= f.frequency %><br>
             <strong>Route: </strong><%= f.route %><br>
             <strong>Indication: </strong><%= f.indication %><br>
             <strong>Prescribing Physician: </strong><%= f.prescribing_physician %><br>

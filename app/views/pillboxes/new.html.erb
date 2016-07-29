@@ -1,63 +1,64 @@
 <nav class="pillbox_navbar">
   <div class="title_pillbox">
-  <h1 style="font-size: 40px;">new pillbox</h1>
+  <h1 style="font-size: 40px;">create a pill</h1>
     <% @users.each do |user| %>
         <%= user.f_name %>
         <%= user.l_name %>
     <% end %>
   </div>
 
-<%= link_to "Profile", home_index_path %><br>
-<%= link_to "Create Pillbox", new_pillbox_path %><br>
-<%= link_to "Show Pillboxes", index_pillbox_path %><br>
-<%= link_to "Create Physician", new_physician_path %><br>
-<%= link_to "Show Physicians", index_physician_path %><br>
-<%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %><br>
+  <%= link_to "Profile", home_index_path %><br>
+  <%= link_to "Create.Pill", new_pillbox_path %><br>
+  <%= link_to "Show.Pillbox", index_pillbox_path %><br>
+  <%= link_to "Create.Physician", new_physician_path %><br>
+  <%= link_to "Show.Physicians", index_physician_path %><br>
+  <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %><br>
 </nav>
 
   <br>
-<div class="big_pillbox">
-  <div class="row_pillbox">
-<%= form_for(@pillbox, url: create_pillbox_path) do |f| %>
-<div class="col-md-3">
-  <div class="field">
-    <%= f.label :medication_name, "Medication: " %>
-    <%= f.text_field :medication_name %>
-  </div>
-  <div class="field">
-    <%= f.label :dosage, "Dosage: " %>
-    <%= f.text_field :dosage %>
-  </div>
-  <div class="field">
-    <%= f.label :frequency, "Frequency: " %>
-    <%= f.text_field :frequency %>
-  </div>
-  <div class="field">
-    <%= f.label :route, "Route: " %>
-    <span class="option">Oral <span><%= f.radio_button :route, "Oral" %>
-    <span class="option">Intravenous <span><%= f.radio_button :route, "IV" %>
-    <span class="option">Rectal <span><%= f.radio_button :route, "Rectal" %>
-    <span class="option">Sublingual <span><%= f.radio_button :route, "Sublingual" %>
-    <span class="option">Inhalation <span><%= f.radio_button :route, "Inhalation" %>
-    <span class="option">Intramuscular (IM) <span><%= f.radio_button :route, "Intramuscular" %>
-    <span class="option">Subcutaneous (SQ) <span><%= f.radio_button :route, "Subcutaneous" %>
-  </div>
+<div class="create_pillbox">
+    <div class="row_pillbox">
+      <h1>pill  <i class="fa fa-medkit" aria-hidden="true"></i></h1>
+  <%= form_for(@pillbox, url: create_pillbox_path) do |f| %>
+  <div class="col-md-12">
+    <div class="field">
+      <%= f.label :medication_name, "Medication: " %>
+      <%= f.text_field :medication_name %>
+    </div>
+    <div class="field">
+      <%= f.label :dosage, "Dosage: " %>
+      <%= f.text_field :dosage %>
+    </div>
+    <div class="field">
+      <%= f.label :frequency, "Frequency: " %>
+      <%= f.text_field :frequency %>
+    </div>
+    <div class="field">
+      <%= f.label :route, "Route: " %>
+      <span class="option">Oral <span><%= f.radio_button :route, "Oral" %>
+      <span class="option">Intravenous <span><%= f.radio_button :route, "IV" %>
+      <span class="option">Rectal <span><%= f.radio_button :route, "Rectal" %>
+      <span class="option">Sublingual <span><%= f.radio_button :route, "Sublingual" %>
+      <span class="option">Inhalation <span><%= f.radio_button :route, "Inhalation" %>
+      <span class="option">Intramuscular (IM) <span><%= f.radio_button :route, "Intramuscular" %>
+      <span class="option">Subcutaneous (SQ) <span><%= f.radio_button :route, "Subcutaneous" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :indication, "Indication: " %>
-    <%= f.text_field :indication %>
-  </div>
-  <div class="field">
-    <%= f.label :prescribing_physician, "Prescribing Physician: " %>
-    <%= f.text_field :prescribing_physician %>
-  </div>
+    <div class="field">
+      <%= f.label :indication, "Indication: " %>
+      <%= f.text_field :indication %>
+    </div>
+    <div class="field">
+      <%= f.label :prescribing_physician, "Prescribing Physician: " %>
+      <%= f.text_field :prescribing_physician %>
+    </div>
 
-  <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
 
-  <div class="actions">
-    <%= f.submit "Create Pillbox" %>
+    <div class="actions">
+      <%= f.submit "Create Pillbox" %>
+    </div>
   </div>
-</div>
-<% end %>
-  </div>
-</div>
+  <% end %>
+      </div>
+    </div>

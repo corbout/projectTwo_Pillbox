@@ -10,74 +10,63 @@
   </div>
 <br>
 <%= link_to "Profile", home_index_path %><br>
-<%= link_to "Create Pillbox", new_pillbox_path %><br>
-<%= link_to "Show Pillboxes", index_pillbox_path %><br>
-<%= link_to "Create Physician", new_physician_path %><br>
-<%= link_to "Show Physicians", index_physician_path %><br>
+<%= link_to "Create.Pill", new_pillbox_path %><br>
+<%= link_to "Show.Pillbox", index_pillbox_path %><br>
+<%= link_to "Create.Physician", new_physician_path %><br>
+<%= link_to "Show.Physicians", index_physician_path %><br>
 <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %><br>
 </nav>
 
   <br>
-<div class="big_physician">
+<div class="create_physician">
   <div class="row_physician">
+    <div class="col-md-12">
 <%= form_for(@physician, url: update_physician_path) do |f| %>
-<div class="col-md-3">
-  <div class="field">
-   <%= f.label :title, "Title: " %>
-   <span class="option">DR <span><%= f.radio_button :title, "DR" %>
-   <span class="option">PA <span><%= f.radio_button :title, "PA" %>
-   <span class="option">NP <span><%= f.radio_button :title, "NP" %><br>
-  </div>
+<div class="field">
+ <%= f.label :title, "Title: " %>
+ <span class="option">DR <span><%= f.radio_button :title, "DR" %>
+ <span class="option">PA <span><%= f.radio_button :title, "PA" %>
+ <span class="option">NP <span><%= f.radio_button :title, "NP" %>
+</div>
 
-  <div class="field">
-    <%= f.label :f_name, "First Name: " %>
-    <%= f.text_field :f_name %>
-  </div>
-  <div class="field">
-    <%= f.label :l_name, "Last Name: " %>
-    <%= f.text_field :l_name %>
-  </div>
-  <div class="field">
-    <%= f.label :specialty, "Specialty: " %>
-    <%= f.text_field :specialty %>
-  </div>
-  <div class="field">
-    <%= f.label :address_line_one, "Address Line One: " %>
-    <%= f.text_field :address_line_one %>
-  </div>
-  <div class="field">
-    <%= f.label :address_line_two, "address_line_two: " %>
-    <%= f.text_field :address_line_two %>
-  </div>
-  <div class="field">
-    <%= f.label :city, "City: " %>
-    <%= f.text_field :city %>
-  </div>
+<div class="field">
+  <%= f.label :f_name, "First Name: " %>
+  <%= f.text_field :f_name %>
+  <%= f.label :l_name, "Last Name: " %>
+  <%= f.text_field :l_name %>
+  <%= f.label :specialty, "Specialty: " %>
+  <%= f.text_field :specialty %>
+</div>
+<div class="field">
+  <%= f.label :address_line_one, "Address Line One: " %>
+  <%= f.text_field :address_line_one %>
+</div>
+<div class="field">
+  <%= f.label :address_line_two, "Address Line Two: " %>
+  <%= f.text_field :address_line_two %>
+</div>
+<div class="field">
+  <%= f.label :city, "City: " %>
+  <%= f.text_field :city %>
+  <%= f.label :state, "State: " %>
+  <%= f.text_field :state %>
+</div>
 
-  <div class="field">
-    <%= f.label :state, "State: " %>
-    <%= f.text_field :state %>
-  </div>
+<div class="field">
+  <%= f.label :zip, "Zip: " %>
+  <%= f.text_field :zip %>
+  <%= f.label :country, "Country: " %>
+  <%= f.text_field :country %>
+</div>
 
-  <div class="field">
-    <%= f.label :zip, "Zip: " %>
-    <%= f.text_field :zip %>
-  </div>
+<div class="field">
+  <%= f.label :phone_number, "Phone Number: " %>
+  <%= f.telephone_field :phone_number %>
+  <%= f.label :email, "Email: " %>
+  <%= f.email_field :email %>
+</div>
 
-  <div class="field">
-    <%= f.label :country, "Country: " %>
-    <%= f.text_field :country %>
-  </div>
-
-  <div class="field">
-    <%= f.label :phone_number, "Phone Number: " %>
-    <%= f.telephone_field :phone_number %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email, "Email: " %>
-    <%= f.email_field :email %>
-  </div>
+<%= f.hidden_field :user_id, :value => current_user.id %>
 
   <div class="actions">
     <%= f.submit "Update Physician" %>

@@ -7,17 +7,18 @@
     <% end %>
   </div>
 
-<%= link_to "Profile", home_index_path %><br>
-<%= link_to "Create Pillbox", new_pillbox_path %><br>
-<%= link_to "Show Pillboxes", index_pillbox_path %><br>
-<%= link_to "Create Physician", new_physician_path %><br>
-<%= link_to "Show Physicians", index_physician_path %><br>
-<%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %><br>
+  <%= link_to "Profile", home_index_path %><br>
+  <%= link_to "Create.Pill", new_pillbox_path %><br>
+  <%= link_to "Show.Pillbox", index_pillbox_path %><br>
+  <%= link_to "Create.Physician", new_physician_path %><br>
+  <%= link_to "Show.Physicians", index_physician_path %><br>
+  <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %><br>
 </nav>
 
-<div class="big_pillbox">
+<div class="create_pillbox">
   <div class="row_pillbox">
-    <div class="col-md-3">
+    <div class="col-md-4">
+      <h1>pill.box <i class="fa fa-medkit" aria-hidden="true"></i></h1>
 <strong>Medication: </strong><%= @pillbox.medication_name %><br>
 <strong>Dosage: </strong><%= @pillbox.dosage %><br>
 <strong>Frequency: </strong><%= @pillbox.frequency %><br>
@@ -27,6 +28,6 @@
 
 <%= link_to "Edit Pillbox", edit_pillbox_path(@pillbox.id) %><br>
 <%= link_to "Delete Pillbox", destroy_pillbox_path, :method => :delete %>
-  </div>
+    </div>
   </div>
 </div>

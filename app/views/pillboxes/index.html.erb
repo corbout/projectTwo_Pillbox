@@ -1,18 +1,18 @@
 <nav class="pillbox_navbar">
   <div class="title_pillbox">
-  <h1 style="font-size: 40px;">show pillboxes</h1>
+  <h1 style="font-size: 40px;">show pillbox</h1>
     <% @users.each do |user| %>
         <%= user.f_name %>
         <%= user.l_name %>
     <% end %>
   </div>
 
-<%= link_to "Profile", home_index_path %><br>
-<%= link_to "Create Pillbox", new_pillbox_path %><br>
-<%= link_to "Show Pillboxes", index_pillbox_path %><br>
-<%= link_to "Create Physician", new_physician_path %><br>
-<%= link_to "Show Physicians", index_physician_path %><br>
-<%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %><br>
+  <%= link_to "Profile", home_index_path %><br>
+  <%= link_to "Create.Pill", new_pillbox_path %><br>
+  <%= link_to "Show.Pillbox", index_pillbox_path %><br>
+  <%= link_to "Create.Physician", new_physician_path %><br>
+  <%= link_to "Show.Physicians", index_physician_path %><br>
+  <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %><br>
 </nav>
 <div class="big_pillbox">
   <div class="row_pillbox">
