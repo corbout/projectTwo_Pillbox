@@ -63,7 +63,7 @@ span {
 
 .big_sign_up {
   float: right;
-  position: static;
+  position: fixed;
   margin-left: 100px;
   margin-top: 50px;
 }
