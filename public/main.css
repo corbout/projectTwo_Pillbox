@@ -52,13 +52,14 @@ span {
 
 .row {
   display: inline-flex;
-  float: left;
+  position: fixed;
   margin: 3px 3px 3px 3px;
 }
 
 .field {
   margin-left: 5px;
   margin-right: 5px;
+  position: fixed;
 }
 
 .big_sign_up {
